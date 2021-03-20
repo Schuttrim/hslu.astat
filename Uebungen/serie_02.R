@@ -76,3 +76,9 @@ boxplot(count ~ spray, InsectSprays, col = c("orange", "blue", "limegreen", "red
 
 #Aufgabe 2.5
 diet <- read.csv("../Daten/Diet.csv")
+diet$weight.loss <- diet$weight6weeks - diet$pre.weight
+dimnames(diet)
+head(diet)
+
+tapply(diet$weight.loss, diet$Diet, FUN = mean)
+boxplot(weight.loss ~ Diet, diet, col = c("limegreen", "purple", "lightblue"))
